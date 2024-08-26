@@ -1,0 +1,178 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff; /* Light sky blue background */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content-wrapper {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+#image-list {
+    width: 25%;
+    padding: 10px;
+    background-color: #ffffe0; /* Light yellow background */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+#image-scroll-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 10px; /* Add some padding for the scrollbar */
+}
+
+#image-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-content: center;
+}
+
+#matrix {
+    width: 75%;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+#matrix-container {
+    position: relative;
+    height: calc(100% - 40px); /* Adjust for h2 */
+    border: 3px solid #ffa500; /* Orange border */
+    background-color: #ffffff; /* White background */
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.2);
+}
+
+h2 {
+    color: #ff6347; /* Tomato red */
+    text-align: center;
+    margin: 0 0 10px 0;
+    font-size: 30px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.quadrant-line {
+    position: absolute;
+    background-color: #ffd700; /* Gold lines */
+}
+
+.vertical {
+    width: 2px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.horizontal {
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.label {
+    position: absolute;
+    font-size: 24px;
+    color: #4169e1; /* Royal blue text */
+    font-weight: bold;
+    z-index: 10; /* Ensure labels are above the images */
+    pointer-events: none; /* Allow clicks to pass through to the images underneath */
+}
+
+.top-left { top: 5px; left: 5px; }
+.top-right { top: 5px; right: 5px; }
+.bottom-left { bottom: 5px; left: 5px; }
+.bottom-right { bottom: 5px; right: 5px; }
+
+.draggable {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    cursor: move;
+    user-select: none;
+    transition: all 0.3s ease;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.draggable img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.draggable.on-matrix {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+
+.draggable.enlarged {
+    width: 120px;
+    height: 120px;
+    z-index: 1000;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.image-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(65, 105, 225, 0.8); /* Semi-transparent royal blue */
+    color: white;
+    padding: 4px;
+    font-size: 20px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.draggable.on-matrix .image-label {
+    font-size: 8px;
+    padding: 2px;
+    z-index: 5; /* Ensure the image label is above the image but below the matrix labels */
+}
+
+
+#image-list, #matrix {
+    border-radius: 15px;
+    padding: 25px;
+}
+
+#image-container {
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+footer {
+    background-color: #4169e1; /* Royal blue */
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.copyright {
+    font-size: 12px;
+    margin: 0;
+}
