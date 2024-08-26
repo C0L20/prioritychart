@@ -1,7 +1,7 @@
 const imageList = [
     { id: 'Art & Creative Expression', src: 'images/art&creativeexpression.jpg', alt: 'Art and Creative Expression' },
     { id: 'Career', src: 'images/career.jpg', alt: 'Laptops in an office' },
-    { id: 'Childen/Children', src: 'images/childchildren.jpg', alt: 'Photo of child holding parents hand' },
+    { id: 'Childen/Children', src: 'images/parent&child.jpg', alt: 'Photo of parent holding their child' },
     { id: 'Education', src: 'images/Education.jpg', alt: 'Grad hats being thrown into the air' },
     { id: 'Family', src: 'images/Family.jpg', alt: 'Photo of a family of 6' },
     { id: 'Friends', src: 'images/Friends.jpg', alt: 'A photo of a group of friends' },
